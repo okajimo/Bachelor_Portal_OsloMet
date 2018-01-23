@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('content')
-    Index
+    <h3>test commit samtidig</h3>
 @endsection
