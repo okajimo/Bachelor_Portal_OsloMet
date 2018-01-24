@@ -1,5 +1,13 @@
 @extends('layouts.app')
 @section('content')
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore delectus fuga facilis eius perspiciatis, eligendi vel rerum reiciendis sit nisi voluptate autem, dicta sint explicabo sapiente nulla ut odio labore.</p>
-    <h3>test commit samtidig</h3>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Hello, world!</h1>
+            <p>Contents ...</p>
+            <p>
+                <a class="btn btn-primary btn-lg">Learn more</a>
+            </p>
+        </div>
+    </div>
+    
 @endsection
