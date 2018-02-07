@@ -7,8 +7,21 @@
     margin-bottom: 24px;
 }
 
+.info {
+    color: black;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-left: 8.89em;
+    margin-top: 1em;
+    min-width: 209.55px;
+}
+
 .navbar {
     min-height: 8.5em;
+}
+
+.navbar-nav{
+    margin-left: 3em;
 }
 
 .navbar-inverse .navbar-nav > li > a {
