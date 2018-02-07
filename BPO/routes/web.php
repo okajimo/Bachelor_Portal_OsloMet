@@ -12,5 +12,8 @@
 */
 
 Route::get('/', 'PagesController@Index');
-Route::get('/index', 'PagesController@Index');
-Route::get('/home', 'PagesController@Index');
+Route::get('/kontakt_info', 'PagesController@kontakt_info');
+Route::get('/informasjon', 'PagesController@informasjon');
+Route::get('/prosjektforslag', 'PagesController@prosjektforslag');
+Route::get('/tidligere_prosjekter', 'PagesController@tidligere_prosjekter');
+Route::get('/grupper', 'PagesController@grupper');
