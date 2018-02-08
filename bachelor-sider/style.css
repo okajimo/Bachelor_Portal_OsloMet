@@ -1,0 +1,206 @@
+/* 
+    Document   : style
+    Created on : Aug 16, 2011, 4:31:42 PM
+    Author     : tor krattebøl
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+a.whiteLink:link { color: white; text-decoration: none }
+a.whiteLink:visited { color: white; text-decoration: none}
+a.whiteLink:active { color: white; text-decoration: none }
+a.whiteLink:hover { color: #EA7126; text-decoration: none}
+a.blaaLink:link {color: blue;}
+a.blaaLink:visited {color: blue;}
+a.blaaLink:active{color: blue;}
+a.blaaLink:hover {color: blue;}
+
+
+
+body
+{
+    margin-top: 0px;
+    margin-left: 0px;
+    font-size: 10pt;
+    font-family: sans-serif;
+    color:white;
+}
+.topMenu{
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 100%;
+    height:110px;
+    background-color: #000;
+}
+
+#logo{
+    position: relative; 
+    float:left;
+    z-index:1; 
+    width: 187px;
+    height: 65px;
+    margin-left:25px;
+    margin-top: 18px;
+    border-color: black;
+}
+.meny{
+    float : left;
+    width : 100px;
+    height: 30px;
+    margin-top: 80px;
+    margin-left: 20px;
+}
+.menyTekst{
+    position: absolute;
+    top: 35px;
+    left: 255px;
+    font: 14px;
+}
+
+.link{
+   float:left;
+   width: 100px;
+   height:20px;
+   background: #000;
+   font-size: 14px;
+   border-right-width: 1px;
+   border-right-style: solid;
+   border-right-color: #5B5B5B;
+}
+.bildeRamme{
+    float:left;
+    min-height: 200px;
+    max-width: 100%;
+    padding: 0px 30px 0 30px;
+    min-width: 200px;
+    background: black;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top:10px;
+    position: relative;
+    z-index: 0;
+    text-align: left;
+    clear:left;
+}
+.bilde{
+   position: relative;
+   z-index: 1; 
+   left: 400px;
+   top:0px;
+  }
+.tekstIRamme{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 400;
+    margin-top: 20px;
+    color: white;
+}
+.nyheter{
+    position: absolute;
+    width: 320px;
+    height: 500px;
+    background: #E7E6E2;
+    color: #03C;
+    padding: 2px;
+    left: 900px;
+    top: 136px;
+    border-radius: 10px;
+}
+.liste{
+    list-style-position: outside;
+}
+
+
+.sideMeny{
+   position: absolute;
+   width: 200px;
+   height:200px;
+   background: #E7E6E2;
+   color: #03C;
+   padding: 20px;
+   left: 20px;
+   top: 360px;
+   border-radius: 10px;
+}
+.sideMenyUtenBilde{
+   position: absolute;
+   width: 200px;
+   height:200px;
+   background: #E7E6E2;
+   color: #03C;
+   padding: 20px;
+   left: 20px;
+   top: 140px;
+   border-radius: 10px;
+}
+.tekstUtenMeny{
+    position: absolute;
+    color:black;
+    width: 600px;
+    height:200px;
+    left: 260px;
+    top: 360px;
+    background-color: white;
+    padding: 20px;
+}
+.tekstMedMeny{
+    position: absolute;
+    color:black;
+    width: 600px;
+    height:200px;
+    left: 40px;
+    top: 360px;
+    background-color: white;
+    padding: 20px;
+}
+
+.tekstMedMenyUtenBilde{
+    position: absolute;
+    left: 220px;
+    top: 140px;
+    color:black;
+    background-color: white;
+    padding: 20px;
+    
+}
+.tekstUtenMenyUtenBilde{
+    position: absolute;
+    left: 20px;
+    top: 140px;
+    color:black;
+    background-color: white;
+    padding: 20px;
+    
+}
+.studentTabell{
+    color:black;
+    border: solid black;
+    border-width:2px;
+    border-color: black;
+    font-size: 14px;
+    
+}
+.studentTabellKarakter{
+    color:black;
+    border: solid black;
+    border-width:2px;
+    border-color: black;
+    font-size: 14px;
+    text-align: right;
+}
+table
+ {
+    border-collapse:collapse;
+ }
+ table,th, td
+ {
+    border: 1px solid black;
+ }
+
+
