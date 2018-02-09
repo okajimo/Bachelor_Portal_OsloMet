@@ -35,4 +35,44 @@ class PagesController extends Controller
         $title = "Tidligere Prosjekter";
         return view('pages.tidligere_prosjekter')->with('title', $title);
     }
+
+    public function studenter(){
+        $title = "Studenter";
+        return view('pages.studenter')->with('title', $title);
+    }
+
+    public function statusrapport(){
+        $title = "Statusrapport";
+        return view('pages.statusrapport')->with('title', $title);
+    }
+    
+    public function dokumentasjon(){
+        $title = "Dokumentasjon";
+        return view('pages.dokumentasjon')->with('title', $title);
+    }
+    
+    public function prosjektskisse(){
+        $title = "Prosjektskisse";
+        return view('pages.prosjektskisse')->with('title', $title);
+    }
+
+    public function veiledning(){
+        $title = "Veiledning";
+        return view('pages.veiledning')->with('title', $title);
+    }
+
+    public function forprosjekt(){
+        $title = "Forprosjekt";
+        return view('pages.forprosjekt')->with('title', $title);
+    }
+
+    public function prosjektrapport(){
+        $title = "Prosjektrapport";
+        return view('pages.prosjektrapport')->with('title', $title);
+    }
+
+    public function evaluering(){
+        $title = "Evaluering";
+        return view('pages.evaluering')->with('title', $title);
+    }
 }

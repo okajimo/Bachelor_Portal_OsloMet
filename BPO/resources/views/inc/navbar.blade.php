@@ -19,7 +19,7 @@
                 <li><a href="/prosjektforslag">Prosjektforslag</a></li>
                 <li><a href="/tidligere_prosjekter">Tidligere Prosjekter</a></li>
                 <li><a href="/grupper">Grupper</a></li>
-                <li><a href="/kontakt_info">Kontakt</a></li>
+                <li><a href="/kontakt_info">Kontakt oss</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
