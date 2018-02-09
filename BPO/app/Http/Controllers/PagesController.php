@@ -18,12 +18,12 @@ class PagesController extends Controller
 
     public function informasjon(){
         $title = "Informasjon";
-        return view('pages.informasjon')->with('title', $title);
+        return view('pages.info.informasjon')->with('title', $title);
     }
 
     public function kontakt_info(){
         $title = "Kontakt Info";
-        return view('pages.kontakt_info')->with('title', $title);
+        return view('pages.info.kontakt_info')->with('title', $title);
     }
 
     public function prosjektforslag(){
@@ -38,41 +38,36 @@ class PagesController extends Controller
 
     public function studenter(){
         $title = "Studenter";
-        return view('pages.studenter')->with('title', $title);
-    }
-
-    public function statusrapport(){
-        $title = "Statusrapport";
-        return view('pages.statusrapport')->with('title', $title);
+        return view('pages.info.studenter')->with('title', $title);
     }
     
     public function dokumentasjon(){
         $title = "Dokumentasjon";
-        return view('pages.dokumentasjon')->with('title', $title);
+        return view('pages.info.dokumentasjon')->with('title', $title);
     }
-    
-    public function prosjektskisse(){
-        $title = "Prosjektskisse";
-        return view('pages.prosjektskisse')->with('title', $title);
+
+    public function lastNed($file_name) {
+        $file_path = public_path('files/'.$file_name);
+        return response()->download($file_path);
     }
 
     public function veiledning(){
         $title = "Veiledning";
-        return view('pages.veiledning')->with('title', $title);
+        return view('pages.info.veiledning')->with('title', $title);
     }
 
     public function forprosjekt(){
         $title = "Forprosjekt";
-        return view('pages.forprosjekt')->with('title', $title);
+        return view('pages.info.forprosjekt')->with('title', $title);
     }
 
     public function prosjektrapport(){
         $title = "Prosjektrapport";
-        return view('pages.prosjektrapport')->with('title', $title);
+        return view('pages.info.prosjektrapport')->with('title', $title);
     }
 
     public function evaluering(){
         $title = "Evaluering";
-        return view('pages.evaluering')->with('title', $title);
+        return view('pages.info.evaluering')->with('title', $title);
     }
 }

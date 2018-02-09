@@ -3,9 +3,9 @@
 <nav class="navbar navbar-inverse">       
     <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li><a href="/statusrapport"><h4>Statusrapport</h4></a></li>
-            <li><a href="/dokumetasjon"><h4>Dokumetasjon</h4></a></li>
-            <li><a href="/prosjektskisse"><h4>Prosjektskisse</h4></a></li>
+            <li><a href="{{ asset('files/Statusrapport.pdf')}}"><h4>Statusrapport</h4></a></li>
+            <li><a href="/dokumentasjon"><h4>Dokumetasjon</h4></a></li>
+            <li><a href="{{ asset('files/Prosjektskisse.pdf')}}"><h4>Prosjektskisse</h4></a></li>
             <li><a href="/veiledning"><h4>Veiledning</h4></a></li>
             <li><a href="/forprosjekt"><h4>Forprosjekt</h4></a></li>
             <li><a href="/prosjektrapport"><h4>Prosjektrapport</h4></a></li>
@@ -25,11 +25,10 @@
                 Så starter forprosjektet og forprosjektrapporten skal være ferdig senest <b>19.1.2018</b></br>
                 Selve prosjektarbeidet pågår frem til innleveringsfristen <b>23.5.2018</b></br>
                 Til slutt må dere forberede presentasjonen som vil foregå <b>11.6 - 14.6.2018</b></br>
-            </p>
-
+            </p></br> 
             <table class="table">
                 <tr>
-                    <td>Nr</td><td>Oppgave</td><td>Hvor</td><td>Frist</td>
+                    <th>Nr</th><th>Oppgave</th><th>Hvor</th><th>Frist</th>
                 </tr>
                 <tr>
                     <td>1</td><td>Statusrapport</td><td>På nettet</td><td>20.10.2017</td>
