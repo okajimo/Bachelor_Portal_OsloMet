@@ -16,12 +16,10 @@ Route::get('/kontakt_info', 'PagesController@kontakt_info');
 Route::get('/prosjektforslag', 'PagesController@prosjektforslag');
 Route::get('/tidligere_prosjekter', 'PagesController@tidligere_prosjekter');
 Route::get('/grupper', 'PagesController@grupper');
-
 Route::get('/informasjon', 'PagesController@informasjon');
     Route::get('/studenter', 'PagesController@studenter');
-        Route::get('/statusrapport', 'PagesController@statusrapport');
-        Route::get('/dokumentasjon', 'PagesController@studenter');
-        Route::get('/prosjektskisse', 'PagesController@prosjektskisse');
+        Route::get('/dokumentasjon', 'PagesController@dokumentasjon');
+            Route::get('/lastNed/{file}', 'PagesController@lastNed');
         Route::get('/veiledning', 'PagesController@veiledning');
         Route::get('/forprosjekt', 'PagesController@forprosjekt');
         Route::get('/prosjektrapport', 'PagesController@prosjektrapport');
