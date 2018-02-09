@@ -51,7 +51,7 @@ class CreateAppTables extends Migration
 		
 		    $table->integer('group_number');
 		    // Error generate : year)
-		    $table->;
+		    $table->integer('year');
 		    $table->string('leader', 45);
 		    $table->string('title', 127)->nullable();
 		    $table->string('url', 127)->nullable();
@@ -86,7 +86,7 @@ class CreateAppTables extends Migration
 		    $table->integer('student_groups_year');
 		    $table->integer('student_groups_number');
 		    // Error generate : year) ON DELETE NO ACTION ON UPDATE NO ACTION
-		    $table->;
+		    $table->integer('year');
 		    
 		    $table->primary('student', 'student_groups_year');
 		
@@ -114,7 +114,7 @@ class CreateAppTables extends Migration
 		    $table->string('file_name', 127);
 		    $table->string('title', 45);
 		    // Error generate : year) ON DELETE NO ACTION ON UPDATE NO ACTION
-		    $table->;
+		    $table->integer('year');
 		
 		    $table->index(['documents_year', 'documents_groups_number'],'connect_groups_idx');
 		
@@ -177,7 +177,7 @@ class CreateAppTables extends Migration
 		    $table->string('presentation_plan_room', 45)->unsigned();
 		    $table->integer('sensor');
 		    // Error generate : year) ON DELETE NO ACTION ON UPDATE NO ACTION
-		    $table->;
+		    $table->integer('year');
 		    
 		    $table->primary('presentation_plan_group_number', 'presentation_plan_year');
 		
