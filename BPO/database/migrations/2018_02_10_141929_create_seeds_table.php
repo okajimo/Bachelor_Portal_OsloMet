@@ -51,7 +51,7 @@ class CreateSeedsTable extends Migration
 		    $table->engine = 'InnoDB';
 		
 		    $table->integer('group_number');
-		    $table->integer('ar');
+		    $table->string('ar', 45);
 		    $table->string('leader', 45);
 		    $table->string('title', 127)->nullable();
 		    $table->string('url', 127)->nullable();
@@ -83,7 +83,7 @@ class CreateSeedsTable extends Migration
 		    $table->engine = 'InnoDB';
 		
 		    $table->string('student', 15);
-		    $table->integer('student_groups_ar');
+		    $table->string('student_groups_ar', 45);
 		    $table->integer('student_groups_number');
 		    
 		    $table->primary(['student', 'student_groups_ar']);
@@ -110,7 +110,7 @@ class CreateSeedsTable extends Migration
 		    $table->engine = 'InnoDB';
 		
 		    $table->increments('id');
-		    $table->integer('documents_ar');
+		    $table->string('documents_ar', 45);
 		    $table->integer('documents_groups_number');
 		    $table->string('file_name', 127);
 		    $table->string('title', 45);
@@ -170,7 +170,7 @@ class CreateSeedsTable extends Migration
 		    $table->engine = 'InnoDB';
 		
 		    $table->integer('presentation_plan_group_number');
-		    $table->integer('presentation_plan_ar');
+		    $table->string('presentation_plan_ar', 45);
 		    $table->dateTime('start');
 		    $table->dateTime('end');
 		    $table->string('presentation_plan_room', 45);
