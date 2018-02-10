@@ -19,7 +19,7 @@ class CreateSeedsTable extends Migration
 		    $table->integer('level');
 		    $table->enum('type', ['superadmin',  'admin',  'assistant',  'student'])->comment('Her defineres type adgang.');
 		    
-		    $table->primary('level');
+		    $table->primary(['level']);
 		
 		    $table->timestamps();
 		
@@ -36,7 +36,7 @@ class CreateSeedsTable extends Migration
 		    $table->string('password', 45);
 		    $table->string('sex', 45);
 		    
-		    $table->primary('username');
+		    $table->primary(['username']);
 		
 		    $table->index('level','level_idx');
 		
@@ -51,13 +51,13 @@ class CreateSeedsTable extends Migration
 		    $table->engine = 'InnoDB';
 		
 		    $table->integer('group_number');
-		    $table->integer('year');
+		    $table->integer('ar');
 		    $table->string('leader', 45);
 		    $table->string('title', 127)->nullable();
 		    $table->string('url', 127)->nullable();
 		    $table->string('supervisor', 45)->nullable();
 		    
-		    $table->primary(['year','group_number']);
+		    $table->primary(['group_number', 'ar']);
 		
 		    $table->timestamps();
 		
@@ -70,7 +70,7 @@ class CreateSeedsTable extends Migration
 		    $table->string('student_points', 45);
 		    $table->string('program', 45);
 		    
-		    $table->primary('username');
+		    $table->primary(['username']);
 		
 		    $table->foreign('username')
 		        ->references('username')->on('users');
@@ -83,22 +83,26 @@ class CreateSeedsTable extends Migration
 		    $table->engine = 'InnoDB';
 		
 		    $table->string('student', 15);
-		    $table->integer('student_groups_year');
+		    $table->integer('student_groups_ar');
 		    $table->integer('student_groups_number');
 		    
-		    $table->primary(['student', 'student_groups_year']);
+		    $table->primary(['student', 'student_groups_ar']);
 		
-		    $table->index(['student_groups_number', 'student_groups_year'],'group_number_idx');
-			
-			$table->foreign('student_groups_number')
+		    $table->index(['student_groups_number', 'student_groups_ar'],'group_number_idx');
+		
+		    $table->foreign('student_groups_number')
 		        ->references('group_number')->on('groups');
-				
-			$table->foreign('student')
-			->references('username')->on('student');
+            
+            $table->foreign('student')
+            ->references('username')->on('student');
+            
+		    $table->foreign('student_groups_ar')
+		        ->references('ar')->on('groups');
 		
-		    $table->foreign('student_groups_year')
-		        ->references('year')->on('groups');
+            $table->foreign('student_groups_ar')
+            ->references('ar')->on('groups');
 		
+		    $table->timestamps();
 		
 		});
 
@@ -106,19 +110,18 @@ class CreateSeedsTable extends Migration
 		    $table->engine = 'InnoDB';
 		
 		    $table->increments('id');
-		    $table->integer('documents_year');
+		    $table->integer('documents_ar');
 		    $table->integer('documents_groups_number');
 		    $table->string('file_name', 127);
 		    $table->string('title', 45);
-		    // Error generate : year) ON DELETE NO ACTION ON UPDATE NO ACTION
 		
-		    $table->index(['documents_year', 'documents_groups_number'],'connect_groups_idx');
+		    $table->index(['documents_ar', 'documents_groups_number'],'connect_groups_idx');
 		
 		    $table->foreign('documents_groups_number')
 		        ->references('group_number')->on('groups');
 		
-		    $table->foreign('documents_year')
-		        ->references('year')->on('groups');
+		    $table->foreign('documents_ar')
+		        ->references('ar')->on('groups');
 		
 		    $table->timestamps();
 		
@@ -146,7 +149,7 @@ class CreateSeedsTable extends Migration
 		    $table->string('lastname', 45);
 		    $table->string('status', 45);
 		    
-		    $table->primary('email');
+		    $table->primary(['email']);
 		
 		    $table->timestamps();
 		
@@ -167,25 +170,26 @@ class CreateSeedsTable extends Migration
 		    $table->engine = 'InnoDB';
 		
 		    $table->integer('presentation_plan_group_number');
-		    $table->integer('presentation_plan_year');
+		    $table->integer('presentation_plan_ar');
 		    $table->dateTime('start');
 		    $table->dateTime('end');
 		    $table->string('presentation_plan_room', 45);
 		    $table->integer('sensor');
-		    $table->integer('year');
 		    
-		    $table->primary('presentation_plan_group_number', 'presentation_plan_year');
+		    $table->primary(['presentation_plan_group_number', 'presentation_plan_ar']);
 		
 		    $table->index('presentation_plan_room','presentation_plan_idx');
 		
 		    $table->foreign('presentation_plan_group_number')
 		        ->references('group_number')->on('groups');
 		
-		    $table->foreign('presentation_plan_year')
-		        ->references('year')->on('groups');
+		    $table->foreign('presentation_plan_ar')
+		        ->references('ar')->on('groups');
 		
 		    $table->foreign('presentation_plan_room')
 		        ->references('room')->on('room');
+		
+		    $table->timestamps();
 		
 		});
 
