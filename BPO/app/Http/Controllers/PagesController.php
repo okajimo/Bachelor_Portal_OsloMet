@@ -70,4 +70,39 @@ class PagesController extends Controller
         $title = "Evaluering";
         return view('pages.info.evaluering')->with('title', $title);
     }
+
+    public function sensorer(){
+        $title = "Informasjon for sensorer 2017/2018"; //år bør komme fra db
+        return view('pages.info.sensorer')->with('title', $title);
+    }
+
+    public function oppdragsgivere(){
+        $title = "Informasjon for oppdragsgivere";
+        return view('pages.info.oppdragsgivere')->with('title', $title);
+    }
+    
+    public function oppdragProsjekt(){
+        $title = "Hva er et bachelorprosjekt?";
+        return view('pages.info.oppdragProsjekt')->with('title', $title);
+    }
+
+    public function oppdragStudent(){
+        $title = "Hva kan en datastudent utrette?";
+        return view('pages.info.oppdragStudent')->with('title', $title);
+    }
+
+    public function oppdragSammarbeid(){
+        $title = "Samarbeid med bedrifter";
+        return view('pages.info.oppdragSammarbeid')->with('title', $title);
+    }
+
+    public function oppdragBedrift(){
+        $title = "En samarbeidsavtale";
+        return view('pages.info.oppdragBedrift')->with('title', $title);
+    }
+
+    public function oppdragKontakt(){
+        $title = "Ta kontakt med oss!";
+        return view('pages.info.oppdragKontakt')->with('title', $title);
+    }
 }
