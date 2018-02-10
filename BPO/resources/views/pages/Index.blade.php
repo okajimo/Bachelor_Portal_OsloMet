@@ -2,11 +2,8 @@
 @section('content')
     <div class="jumbotron">
         <div class="container">
-            <h1>Hello, world!</h1>
-            <p>Contents ...</p>
-            <p>
-                <a class="btn btn-primary btn-lg">Learn more</a>
-            </p>
+            Bachelorprosjektene blir utført i siste semester i 3 klasse. Tildligere ble dette kalt hovedprosjekt.</br>
+            Anskaffelse av oppgave og forberedelser til prosjektet skjer i løpet av høsten.
         </div>
     </div>
 @endsection
