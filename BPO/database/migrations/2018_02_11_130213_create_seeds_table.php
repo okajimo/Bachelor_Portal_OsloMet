@@ -13,15 +13,13 @@ class CreateSeedsTable extends Migration
      */
     public function up()
     {
-        Schema::create('accesslevel', function(Blueprint $table) {
+		Schema::create('accesslevel', function(Blueprint $table) {
 		    $table->engine = 'InnoDB';
 		
 		    $table->integer('level');
-		    $table->enum('type', ['superadmin',  'admin',  'assistant',  'student'])->comment('Her defineres type adgang.');
+		    $table->enum('type', ['superadmin',  'admin',  'assistant',  'student']);
 		    
-		    $table->primary(['level']);
-		
-		    $table->timestamps();
+		    $table->primary('level');
 		
 		});
 
@@ -36,30 +34,24 @@ class CreateSeedsTable extends Migration
 		    $table->string('password', 45);
 		    $table->string('sex', 45);
 		    
-		    $table->primary(['username']);
-		
+		    $table->primary('username');
+                
 		    $table->index('level','level_idx');
-		
-		    $table->foreign('level')
-		        ->references('level')->on('accesslevel');
-		
-		    $table->timestamps();
 		
 		});
 
 		Schema::create('groups', function(Blueprint $table) {
-		    $table->engine = 'InnoDB';
-		
-		    $table->integer('group_number');
-		    $table->string('ar', 45);
+            $table->engine = 'InnoDB';
+            
+            $table->integer('group_number');
+            $table->integer('year');
 		    $table->string('leader', 45);
 		    $table->string('title', 127)->nullable();
 		    $table->string('url', 127)->nullable();
 		    $table->string('supervisor', 45)->nullable();
 		    
-		    $table->primary(['group_number', 'ar']);
+		    $table->primary(['group_number', 'year']);
 		
-		    $table->timestamps();
 		
 		});
 
@@ -70,39 +62,20 @@ class CreateSeedsTable extends Migration
 		    $table->string('student_points', 45);
 		    $table->string('program', 45);
 		    
-		    $table->primary(['username']);
-		
-		    $table->foreign('username')
-		        ->references('username')->on('users');
-		
-		    $table->timestamps();
+		    $table->primary('username');
 		
 		});
 
 		Schema::create('student_groups', function(Blueprint $table) {
 		    $table->engine = 'InnoDB';
 		
-		    $table->string('student', 15);
-		    $table->string('student_groups_ar', 45);
-		    $table->integer('student_groups_number');
+            $table->string('student', 15);
+            $table->integer('student_groups_number');
+		    $table->integer('student_groups_year');
 		    
-		    $table->primary(['student', 'student_groups_ar']);
+		    $table->primary(['student', 'student_groups_year']);
 		
-		    $table->index(['student_groups_number', 'student_groups_ar'],'group_number_idx');
-		
-		    $table->foreign('student_groups_number')
-		        ->references('group_number')->on('groups');
-            
-            $table->foreign('student')
-            ->references('username')->on('student');
-            
-		    $table->foreign('student_groups_ar')
-		        ->references('ar')->on('groups');
-		
-            $table->foreign('student_groups_ar')
-            ->references('ar')->on('groups');
-		
-		    $table->timestamps();
+		    $table->index(['student_groups_number', 'student_groups_year'],'group_number_idx');
 		
 		});
 
@@ -110,20 +83,12 @@ class CreateSeedsTable extends Migration
 		    $table->engine = 'InnoDB';
 		
 		    $table->increments('id');
-		    $table->string('documents_ar', 45);
+		    $table->integer('documents_year');
 		    $table->integer('documents_groups_number');
 		    $table->string('file_name', 127);
 		    $table->string('title', 45);
 		
-		    $table->index(['documents_ar', 'documents_groups_number'],'connect_groups_idx');
-		
-		    $table->foreign('documents_groups_number')
-		        ->references('group_number')->on('groups');
-		
-		    $table->foreign('documents_ar')
-		        ->references('ar')->on('groups');
-		
-		    $table->timestamps();
+		    $table->index(['documents_year', 'documents_groups_number'],'connect_groups_idx');
 		
 		});
 
@@ -137,7 +102,6 @@ class CreateSeedsTable extends Migration
 		    $table->dateTime('project_report');
 		    $table->dateTime('end');
 		
-		    $table->timestamps();
 		
 		});
 
@@ -149,9 +113,8 @@ class CreateSeedsTable extends Migration
 		    $table->string('lastname', 45);
 		    $table->string('status', 45);
 		    
-		    $table->primary(['email']);
+		    $table->primary('email');
 		
-		    $table->timestamps();
 		
 		});
 
@@ -162,34 +125,22 @@ class CreateSeedsTable extends Migration
 		    
 		    $table->primary('room');
 		
-		    $table->timestamps();
 		
 		});
 
-		Schema::create('presentation_plan', function(Blueprint $table) {
+		Schema::create('presentation', function(Blueprint $table) {
 		    $table->engine = 'InnoDB';
 		
-		    $table->integer('presentation_plan_group_number');
-		    $table->string('presentation_plan_ar', 45);
+		    $table->integer('presentation_group_number');
+		    $table->integer('presentation_year');
 		    $table->dateTime('start');
 		    $table->dateTime('end');
-		    $table->string('presentation_plan_room', 45);
-		    $table->integer('sensor');
+		    $table->string('presentation_room', 45);
+            $table->integer('sensor');
 		    
-		    $table->primary(['presentation_plan_group_number', 'presentation_plan_ar']);
+		    $table->primary(['presentation_group_number', 'presentation_year']);
 		
-		    $table->index('presentation_plan_room','presentation_plan_idx');
-		
-		    $table->foreign('presentation_plan_group_number')
-		        ->references('group_number')->on('groups');
-		
-		    $table->foreign('presentation_plan_ar')
-		        ->references('ar')->on('groups');
-		
-		    $table->foreign('presentation_plan_room')
-		        ->references('room')->on('room');
-		
-		    $table->timestamps();
+		    $table->index('presentation_room','presentation_idx');
 		
 		});
 
@@ -205,9 +156,10 @@ class CreateSeedsTable extends Migration
 		    
 		    $table->primary('id');
 		
-		    $table->timestamps();
 		
 		});
+
+
     }
 
     /**
@@ -217,6 +169,17 @@ class CreateSeedsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seeds');
+		Schema::drop('log');
+		Schema::drop('presentation_plan');
+		Schema::drop('room');
+		Schema::drop('sensors_supervisors');
+		Schema::drop('dates');
+		Schema::drop('documents');
+		Schema::drop('student_groups');
+		Schema::drop('student');
+		Schema::drop('groups');
+		Schema::drop('users');
+		Schema::drop('accesslevel');
+
     }
 }
