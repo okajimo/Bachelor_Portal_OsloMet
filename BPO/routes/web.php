@@ -31,3 +31,7 @@ Route::get('/informasjon', 'PagesController@informasjon');
         Route::get('/oppdragSammarbeid', 'PagesController@oppdragSammarbeid');
         Route::get('/oppdragBedrift', 'PagesController@oppdragBedrift');
         Route::get('/oppdragKontakt', 'PagesController@oppdragKontakt');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
